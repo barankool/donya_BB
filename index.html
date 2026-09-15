@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سلام دنیا شفاعی 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+  font-family:Tahoma,Arial,sans-serif; background:linear-gradient(135deg,#ffd6e7,#e8d9ff);
+  overflow:hidden; color:#54233d;
+}
+.card{
+  width:min(90%,520px); padding:42px 28px; text-align:center; background:#ffffffdd;
+  backdrop-filter:blur(10px); border-radius:30px; box-shadow:0 20px 60px #8b557733;
+  animation:pop .7s ease;
+}
+h1{font-size:34px;margin:0 0 18px}
+p{font-size:20px;line-height:2;margin:10px 0 28px}
+button{
+  border:0; padding:15px 28px; border-radius:999px; font-size:18px; font-weight:bold;
+  color:white; background:linear-gradient(90deg,#ff5f9e,#a66cff); cursor:pointer;
+  box-shadow:0 10px 25px #b65a9a55; transition:.2s;
+}
+button:hover{transform:scale(1.06)}
+.hidden{display:none}
+.result h2{font-size:31px;margin:0 0 15px}
+.result .years{font-size:25px;font-weight:bold}
+.heart{position:fixed;font-size:25px;animation:float 5s linear infinite;opacity:.7}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes float{from{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.8}to{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="card" id="first">
+  <h1>سلام دنیا شفاعی 💗</h1>
+  <p>اگه می‌خوای با باران دوست بمونی،<br>روی این کلیک کن 👇</p>
+  <button onclick="showResult()">می‌خوام با باران دوست بمونم 💕</button>
+</div>
+
+<div class="card result hidden" id="second">
+  <div style="font-size:55px">🎀✨</div>
+  <h2>تبریک دنیا! 😂💗</h2>
+  <p>با موفقیت قرارداد دوستی ثبت شد!</p>
+  <div class="years">تو تا پنج سال آینده با باران دوستی! 🫶🏻</div>
+  <p>فسخ قرارداد هم فعلاً امکان‌پذیر نیست 😌😂</p>
+</div>
+
+<script>
+function showResult(){
+  document.getElementById("first").classList.add("hidden");
+  document.getElementById("second").classList.remove("hidden");
+  for(let i=0;i<18;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.textContent=["💗","💕","💖","🎀","✨"][Math.floor(Math.random()*5)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDelay=Math.random()*2+"s";
+    h.style.fontSize=(18+Math.random()*22)+"px";
+    document.body.appendChild(h);
+  }
+}
+</script>
+</body>
+</html>
